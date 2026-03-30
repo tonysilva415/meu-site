@@ -1,0 +1,40 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  html {
+    @apply text-neutral-900 bg-neutral-50 antialiased;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-800;
+  }
+
+  ::selection {
+    background-color: hsl(var(--color-secondary-300));
+    color: hsl(var(--color-secondary-foreground));
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold shadow transition-all duration-200 hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/70;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-secondary text-secondary-foreground px-5 py-3 text-sm font-semibold shadow transition-all duration-200 hover:bg-secondary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-secondary/70;
+  }
+
+  .card {
+    @apply rounded-lg bg-white shadow-sm ring-1 ring-neutral-100 hover:shadow-lg transition-shadow duration-300;
+  }
+}
+
+
